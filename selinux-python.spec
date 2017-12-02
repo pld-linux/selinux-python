@@ -6,7 +6,7 @@ Summary:	SELinux Python policy utilities
 Summary(pl.UTF-8):	Narzędzia do polityk SELinuksa napisane w Pythonie
 Name:		selinux-python
 Version:	2.7
-Release:	1
+Release:	2
 License:	GPL v2 (sepolgen), GPL v2+ (semodule, sepolicy)
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
@@ -126,7 +126,6 @@ Requires:	gtk+3 >= 3
 Requires:	python-pygobject3 >= 3
 Obsoletes:	python-sepolgen < 2.7
 Conflicts:	policycoreutils-sepolicy < 2.7
-BuildArch:	noarch
 
 %description -n python-sepolicy
 Python modules for SELinux policy manipulation.
