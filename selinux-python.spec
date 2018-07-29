@@ -12,7 +12,6 @@ Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
 Source0:	https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/20180524/%{name}-%{version}.tar.gz
 # Source0-md5:	bd9850808203c76f07efd396bde790e3
-Patch0:		%{name}-pythondir.patch
 URL:		https://github.com/SELinuxProject/selinux/wiki
 BuildRequires:	libsepol-static >= 2.7
 BuildRequires:	python-modules >= 1:2.7
@@ -135,7 +134,6 @@ Moduły Pythona do operowania na politykach SELinuksa.
 
 %prep
 %setup -q
-#%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags} %{rpmcppflags}" \
