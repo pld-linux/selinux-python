@@ -63,7 +63,7 @@ Bashowe dopełnianie składni poleceń semanage i sepolicy.
 Summary:	sepolgen - Python 3 module for policy generation
 Summary(pl.UTF-8):	Moduł Pythona 3 sepolgen do generowania polityki
 License:	GPL v2
-Group:		Python/Libraries
+Group:		Libraries/Python
 Requires:	python3-selinux >= 2.7
 Suggests:	python3-setools
 Obsoletes:	python-sepolgen-common < 2.9-1
@@ -78,7 +78,7 @@ Moduł Pythona sepolgen do generowania polityki.
 %package -n python3-sepolicy
 Summary:	Python modules for SELinux policy manipulation
 Summary(pl.UTF-8):	Moduły Pythona do operowania na politykach SELinuksa
-Group:		Python/Libraries
+Group:		Libraries/Python
 # seobject and sepolicy use translations from policycoreutils domain
 Requires:	policycoreutils >= 2.7
 Requires:	python3-IPy
@@ -151,15 +151,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{py3_sitescriptdir}/seobject.py
 %dir %{py3_sitedir}/sepolicy
-/usr/lib64/python3.7/site-packages/sepolicy/__pycache__
+%{py3_sitedir}/sepolicy/__pycache__
 %{py3_sitedir}/sepolicy/*.py
 %{py3_sitedir}/sepolicy/sepolicy.glade
 %dir %{py3_sitedir}/sepolicy/help
-/usr/lib64/python3.7/site-packages/sepolicy/help/__pycache__
+%{py3_sitedir}/sepolicy/help/__pycache__
 %{py3_sitedir}/sepolicy/help/__init__.py
 %{py3_sitedir}/sepolicy/help/*.png
 %{py3_sitedir}/sepolicy/help/*.txt
 %dir %{py3_sitedir}/sepolicy/templates
-/usr/lib64/python3.7/site-packages/sepolicy/templates/__pycache__
+%{py3_sitedir}/sepolicy/templates/__pycache__
 %{py3_sitedir}/sepolicy/templates/*.py
 %{py3_sitedir}/sepolicy-1.1-py*.egg-info
