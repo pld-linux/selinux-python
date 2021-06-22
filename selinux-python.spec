@@ -9,11 +9,15 @@ Group:		Applications/System
 Source0:	https://github.com/SELinuxProject/selinux/releases/download/20190315/%{name}-%{version}.tar.gz
 # Source0-md5:	e9dfedd1139dd9998f5a09abfb670454
 URL:		https://github.com/SELinuxProject/selinux/wiki
-BuildRequires:	libsepol-static >= 2.7
+BuildRequires:	libsepol-static >= 2.9
 BuildRequires:	python3-modules
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	policycoreutils >= 2.7
+# audit2allow requires sepolgen,selinux modules
+# chcat requires selinux,seobject modules and "policycoreutils" translations domain
+# semanage requires seobject module (part of semanage in fact) and "policycoreutils" translations domain
+Requires:	policycoreutils >= 2.9
+Requires:	python3-selinux >= 2.9
 Requires:	python3-sepolicy = %{version}-%{release}
 Obsoletes:	policycoreutils-sepolicy < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -64,7 +68,7 @@ Summary:	sepolgen - Python 3 module for policy generation
 Summary(pl.UTF-8):	Moduł Pythona 3 sepolgen do generowania polityki
 License:	GPL v2
 Group:		Libraries/Python
-Requires:	python3-selinux >= 2.7
+Requires:	python3-selinux >= 2.9
 Suggests:	python3-setools
 Obsoletes:	python-sepolgen-common < 2.9-1
 BuildArch:	noarch
@@ -79,11 +83,12 @@ Moduł Pythona sepolgen do generowania polityki.
 Summary:	Python modules for SELinux policy manipulation
 Summary(pl.UTF-8):	Moduły Pythona do operowania na politykach SELinuksa
 Group:		Libraries/Python
+# seobject uses selinux,semanage,sepolicy,setools +IPy modules and "policycoreutils" translations domain
 # seobject and sepolicy use translations from policycoreutils domain
-Requires:	policycoreutils >= 2.7
+Requires:	policycoreutils >= 2.9
 Requires:	python3-IPy
 Requires:	python3-dbus
-Requires:	python3-semanage >= 2.7
+Requires:	python3-semanage >= 2.9
 Requires:	python3-sepolgen = %{version}-%{release}
 Requires:	python3-setools
 Requires:	python3-slip-dbus
@@ -131,9 +136,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/audit2allow.1*
 %{_mandir}/man1/audit2why.1*
 %{_mandir}/man8/chcat.8*
+%{_mandir}/man8/semanage*.8*
 %{_mandir}/man8/sepolgen.8*
 %{_mandir}/man8/sepolicy*.8*
-%{_mandir}/man8/semanage*.8*
 %lang(ru) %{_mandir}/ru/man*/*
 
 %files -n bash-completion-%{name}
