@@ -160,16 +160,16 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-sepolicy
 %defattr(644,root,root,755)
 %{py3_sitescriptdir}/seobject.py
-%dir %{py3_sitedir}/sepolicy
-%{py3_sitedir}/sepolicy/__pycache__
-%{py3_sitedir}/sepolicy/*.py
-%{py3_sitedir}/sepolicy/sepolicy.glade
-%dir %{py3_sitedir}/sepolicy/help
-%{py3_sitedir}/sepolicy/help/__pycache__
-%{py3_sitedir}/sepolicy/help/__init__.py
-%{py3_sitedir}/sepolicy/help/*.png
-%{py3_sitedir}/sepolicy/help/*.txt
-%dir %{py3_sitedir}/sepolicy/templates
-%{py3_sitedir}/sepolicy/templates/__pycache__
-%{py3_sitedir}/sepolicy/templates/*.py
-%{py3_sitedir}/sepolicy-%{version}-py*.egg-info
+%dir %{py3_sitescriptdir}/sepolicy
+%{py3_sitescriptdir}/sepolicy/__pycache__
+%{py3_sitescriptdir}/sepolicy/*.py
+%{py3_sitescriptdir}/sepolicy/sepolicy.glade
+%dir %{py3_sitescriptdir}/sepolicy/help
+%{py3_sitescriptdir}/sepolicy/help/__pycache__
+%{py3_sitescriptdir}/sepolicy/help/__init__.py
+%{py3_sitescriptdir}/sepolicy/help/*.png
+%{py3_sitescriptdir}/sepolicy/help/*.txt
+%dir %{py3_sitescriptdir}/sepolicy/templates
+%{py3_sitescriptdir}/sepolicy/templates/__pycache__
+%{py3_sitescriptdir}/sepolicy/templates/*.py
+%{py3_sitescriptdir}/sepolicy-%{version}-py*.egg-info
