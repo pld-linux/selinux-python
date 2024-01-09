@@ -12,6 +12,7 @@ URL:		https://github.com/SELinuxProject/selinux/wiki
 BuildRequires:	libsepol-static >= 3.6
 BuildRequires:	python3-modules
 BuildRequires:	python3-pip
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 # audit2allow requires sepolgen,selinux modules
