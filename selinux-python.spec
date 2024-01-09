@@ -57,7 +57,8 @@ Summary:	Bash completion for semanage and sepolicy commands
 Summary(pl.UTF-8):	Bashowe dopełnianie składni poleceń semanage i sepolicy
 Group:		Applications/Shells
 Requires:	%{name} = %{version}-%{release}
-Requires:	bash-completion >= 2
+Requires:	bash-completion >= 1:2
+BuildArch:	noarch
 
 %description -n bash-completion-%{name}
 Bash completion for semanage and sepolicy commands.
