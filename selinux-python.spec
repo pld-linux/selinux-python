@@ -1,15 +1,15 @@
 Summary:	SELinux Python policy utilities
 Summary(pl.UTF-8):	Narzędzia do polityk SELinuksa napisane w Pythonie
 Name:		selinux-python
-Version:	3.6
+Version:	3.7
 Release:	1
 License:	GPL v2 (sepolgen), GPL v2+ (semodule, sepolicy)
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
 Source0:	https://github.com/SELinuxProject/selinux/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	a2506fcd54bf89a9d3a03063ce3c53aa
+# Source0-md5:	b2bc27bc4e3243d1f60a0cfa6343f480
 URL:		https://github.com/SELinuxProject/selinux/wiki
-BuildRequires:	libsepol-static >= 3.6
+BuildRequires:	libsepol-static >= 3.7
 BuildRequires:	python3-modules
 BuildRequires:	python3-pip
 BuildRequires:	rpm-build >= 4.6
@@ -18,8 +18,8 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 # audit2allow requires sepolgen,selinux modules
 # chcat requires selinux,seobject modules and "policycoreutils" translations domain
 # semanage requires seobject module (part of semanage in fact) and "policycoreutils" translations domain
-Requires:	policycoreutils >= 3.6
-Requires:	python3-selinux >= 3.6
+Requires:	policycoreutils >= 3.7
+Requires:	python3-selinux >= 3.7
 Requires:	python3-sepolicy = %{version}-%{release}
 Obsoletes:	policycoreutils-sepolicy < 2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -71,7 +71,7 @@ Summary:	sepolgen - Python 3 module for policy generation
 Summary(pl.UTF-8):	Moduł Pythona 3 sepolgen do generowania polityki
 License:	GPL v2
 Group:		Libraries/Python
-Requires:	python3-selinux >= 3.6
+Requires:	python3-selinux >= 3.7
 Suggests:	python3-setools
 Obsoletes:	python-sepolgen-common < 2.9-1
 BuildArch:	noarch
@@ -88,13 +88,12 @@ Summary(pl.UTF-8):	Moduły Pythona do operowania na politykach SELinuksa
 Group:		Libraries/Python
 # seobject uses selinux,semanage,sepolicy,setools +IPy modules and "policycoreutils" translations domain
 # seobject and sepolicy use translations from policycoreutils domain
-Requires:	policycoreutils >= 3.6
+Requires:	policycoreutils >= 3.7
 Requires:	python3-IPy
 Requires:	python3-dbus
-Requires:	python3-semanage >= 3.6
+Requires:	python3-semanage >= 3.7
 Requires:	python3-sepolgen = %{version}-%{release}
 Requires:	python3-setools
-Requires:	python3-slip-dbus
 # for sepolicy.gui additionally:
 Requires:	gtk+3 >= 3
 Requires:	python3-pygobject3 >= 3
