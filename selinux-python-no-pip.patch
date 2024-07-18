@@ -1,0 +1,11 @@
+--- selinux-python-3.7/sepolicy/Makefile.orig	2024-06-26 17:30:41.000000000 +0200
++++ selinux-python-3.7/sepolicy/Makefile	2024-07-17 22:12:55.069441157 +0200
+@@ -27,7 +27,7 @@ test:
+ 	@$(PYTHON) test_sepolicy.py -v
+ 
+ install:
+-	$(PYTHON) -m pip install --prefix=$(PREFIX) `test -n "$(DESTDIR)" && echo --root $(DESTDIR) --ignore-installed --no-deps` $(PYTHON_SETUP_ARGS) .
++	$(PYTHON) setup.py install --prefix=$(PREFIX) `test -n "$(DESTDIR)" && echo --root $(DESTDIR)` $(PYTHON_SETUP_ARGS)
+ 	[ -d $(DESTDIR)$(BINDIR) ] || mkdir -p $(DESTDIR)$(BINDIR)
+ 	install -m 755 sepolicy.py $(DESTDIR)$(BINDIR)/sepolicy
+ 	(cd $(DESTDIR)$(BINDIR); ln -sf sepolicy sepolgen)

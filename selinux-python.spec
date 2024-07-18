@@ -2,16 +2,17 @@ Summary:	SELinux Python policy utilities
 Summary(pl.UTF-8):	Narzędzia do polityk SELinuksa napisane w Pythonie
 Name:		selinux-python
 Version:	3.7
-Release:	1
+Release:	2
 License:	GPL v2 (sepolgen), GPL v2+ (semodule, sepolicy)
 Group:		Applications/System
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
 Source0:	https://github.com/SELinuxProject/selinux/releases/download/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	b2bc27bc4e3243d1f60a0cfa6343f480
+Patch0:		%{name}-no-pip.patch
 URL:		https://github.com/SELinuxProject/selinux/wiki
 BuildRequires:	libsepol-static >= 3.7
 BuildRequires:	python3-modules
-BuildRequires:	python3-pip
+BuildRequires:	python3-setuptools
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -107,6 +108,7 @@ Moduły Pythona do operowania na politykach SELinuksa.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 CFLAGS="%{rpmcflags} %{rpmcppflags}" \
